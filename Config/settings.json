@@ -1,0 +1,6 @@
+{
+  "port":12334,
+  "connectionStrings": {
+    "GenReport" : "host=localhost port=5432 user=yourusername password=yourpassword dbname=yourdbname sslmode=disable"
+  }
+}
