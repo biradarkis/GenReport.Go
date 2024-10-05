@@ -6,4 +6,6 @@ type Settings struct {
 	MaxAllowedConnections int    `json:"maxAllowedConnections"`
 	MaxIdleConnection     int    `json:"maxIdleConnection"`
 	MaxConnectionTime     int    `json:"maxConnectionTime"`
+	Environment           string `json:"environment"`
+	AMQPServerURL         string `json:"amqpServerUrl"`
 }
