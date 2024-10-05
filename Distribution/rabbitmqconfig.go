@@ -103,3 +103,12 @@ func (r *RabbitMQBroker) CreateExchange(name string, exchangeType string) error 
 	}
 	return nil
 }
+
+func (r *RabbitMQBroker) GetOrCreateQueue(name string) (amqp.Queue, error) {
+	channel, err := r.GetRabbitMQConnection().Channel()
+	if err != nil {
+		Config.GetLogger().Error("error creating the channel", zap.Error(err))
+	}
+
+	return channel.QueueDeclarePassive(name, true, false, false, false, nil)
+}
