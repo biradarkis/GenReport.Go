@@ -49,7 +49,7 @@ func InitLogger() {
 
 }
 
-func GetSettings() (*Models.Settings, error) {
+func GetSettings() *Models.Settings {
 
 	once.Do(func() {
 		err := ConfigureSettings()
@@ -58,7 +58,7 @@ func GetSettings() (*Models.Settings, error) {
 		}
 	})
 
-	return Settings, nil
+	return Settings
 }
 
 func GetLogger() *zap.Logger {
