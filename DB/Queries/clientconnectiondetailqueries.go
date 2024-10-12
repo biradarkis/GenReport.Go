@@ -1,7 +1,7 @@
 package Queries
 
-import "genreport/DB/Connections/GenReport"
+import "genreport/DB/Connections/GenReportDB"
 
 type ClientConnectionDetail struct {
-	dbConnection *GenReport.SelfDbConnection
+	dbConnection *GenReportDB.SelfDbConnection
 }
