@@ -96,3 +96,13 @@ func (r *RabbitMQConnection) GetOrCreateQueue(name string) (amqp.Queue, error) {
 
 	return channel.QueueDeclarePassive(name, true, false, false, false, nil)
 }
+
+func (r *RabbitMQConnection) CloseConnection() {
+	if !r.Broker.IsClosed() {
+		err := r.Broker.Close()
+		if err != nil {
+			Config.GetLogger().Error("error closing the connection", zap.Error(err))
+		}
+
+	}
+}
